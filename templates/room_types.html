@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="room-types">
+        <h2>Room Types</h2>
+        {% if rooms %}
+            <div class="rooms-container">
+                {% for room in rooms %}
+                    <div class="room-card">
+                        <img src="{{ url_for('static', filename='images/' + room[4]) }}" alt="{{ room[1] }}" onerror="this.src='{{ url_for('static', filename='images/placeholder.jpg') }}'">
+                        <h3>{{ room[1] }}</h3>
+                        <p>{{ room[3] }}</p>
+                        <p class="price">${{ room[2] }}/night</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No room types available at the moment. Please check back later!</p>
+        {% endif %}
+    </section>
+{% endblock %}

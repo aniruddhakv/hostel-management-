@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Hostel Haven</h1>
+            <ul>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('room_types') }}">Room Types</a></li>
+                <li><a href="{{ url_for('room_booking') }}">Book Now</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><button id="dark-mode-toggle">Toggle Dark Mode</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025 Hostel Haven. All rights reserved.</p>
+    </footer>
+</body>
+</html>
